@@ -24,69 +24,94 @@ namespace MiPS2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int queue = 0, chs = (int)C1.Value, working = 0;
-            List<double> chfree = new List<double>(chs);
-            double next = 0, now = 0;
+            int queue, chs, working;
+            List<double> chfree;
+            double next, now;
 
-            double avgqueue = 0;
+            int kkk = (int)Mod1.Value;
 
-            chart1.Series[0].Points.Clear();
-            chart1.Series[1].Points.Clear();
+            double[] avgqueue = new double[kkk];
+            for (int i = 0; i < kkk; i++)
+            {
+                avgqueue[i] = 0;
+            }
+            double avgavgqueue = 0;
 
             WD = new WeibullDistribution(1 / (double)Wa1.Value, (double)Wb1.Value);
             ED = new ExponentialDistribution(1 / (double)El1.Value);
 
-            next = ED.GetRandomValue(RNG);
-            now = next;
-
-            for (int i = 0; i < chs; i++)
+            for (int n = 0; n < kkk; n++)
             {
-                chfree.Add(99999999999999);
-            }
+                queue = 0; chs = (int)C1.Value; working = 0;
+                chfree = new List<double>(chs);
+                next = 0; now = 0;
 
-            chart1.Series[0].Points.AddXY(0, 0);
-            chart1.Series[1].Points.AddXY(0, 0);
+                chart1.Series[0].Points.Clear();
+                chart1.Series[1].Points.Clear();
 
+                next = ED.GetRandomValue(RNG);
+                now = next;
 
-            while ((now=Math.Min(next, chfree[0])) < (double)T1.Value)
-            {
-                if (now == next) // New person
+                for (int i = 0; i < chs; i++)
                 {
-                    queue++;
-                    next += ED.GetRandomValue(RNG);
-                }
-                else // Free channel
-                {
-                    working--;
-                    chfree[0] = 99999999999999;
+                    chfree.Add(99999999999999);
                 }
 
-                chfree.Sort();
+                chart1.Series[0].Points.AddXY(0, 0);
+                chart1.Series[1].Points.AddXY(0, 0);
 
-                if (working < chs && queue > 0)
+
+                while ((now = Math.Min(next, chfree[0])) < (double)T1.Value)
                 {
-                    queue--;
-                    chfree[working] = now + WD.GetRandomValue(RNG);
-                    working++;
+                    if (now == next) // New person
+                    {
+                        queue++;
+                        next += ED.GetRandomValue(RNG);
+                    }
+                    else // Free channel
+                    {
+                        working--;
+                        chfree[0] = 99999999999999;
+                    }
+
                     chfree.Sort();
+
+                    if (working < chs && queue > 0)
+                    {
+                        queue--;
+                        chfree[working] = now + WD.GetRandomValue(RNG);
+                        working++;
+                        chfree.Sort();
+                    }
+
+                    chart1.Series[0].Points.AddXY(now, working);
+                    chart1.Series[1].Points.AddXY(now, queue);
                 }
 
-                chart1.Series[0].Points.AddXY(now, working);
-                chart1.Series[1].Points.AddXY(now, queue);
+                chart1.Series[0].Points.AddXY((double)T1.Value, working);
+                chart1.Series[1].Points.AddXY((double)T1.Value, queue);
+
+                int tms = chart1.Series[1].Points.Count;
+
+                for (int i = 0; i < tms - 1; i++)
+                {
+                    avgqueue[n] += chart1.Series[1].Points[i].YValues[0] * (chart1.Series[1].Points[i + 1].XValue - chart1.Series[1].Points[i].XValue);
+                }
+                avgqueue[n] /= (double)T1.Value;
+                avgavgqueue += avgqueue[n];
             }
 
-            chart1.Series[0].Points.AddXY((double)T1.Value, working);
-            chart1.Series[1].Points.AddXY((double)T1.Value, queue);
-
-            int tms=chart1.Series[1].Points.Count;
-
-            for (int i = 0; i < tms-1; i++)
+            double sum = 0;
+            for (int i = 0; i < kkk; i++)
             {
-                avgqueue += chart1.Series[1].Points[i].YValues[0] * (chart1.Series[1].Points[i + 1].XValue - chart1.Series[1].Points[i].XValue);
+                sum += Math.Pow((avgavgqueue - avgqueue[i]), 2);
             }
-            avgqueue /= (double)T1.Value;
-            Avgqueue1.Text = "Средняя длина очереди: " + avgqueue.ToString();
-        }
 
+            StudentDistribution st = new StudentDistribution(kkk - 1);
+
+            double pogr = st.InverseLeftProbability(1 - (double)Stud1.Value / 200.0) * Math.Sqrt(sum / (kkk - 1)) / Math.Sqrt(kkk);
+
+            Avgqueue1.Text = "Средняя длина очереди:\n" + avgavgqueue.ToString() + "±" + pogr.ToString();
+        }
     }
 }

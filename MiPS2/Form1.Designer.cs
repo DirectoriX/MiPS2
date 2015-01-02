@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -50,6 +50,10 @@
             this.El1 = new System.Windows.Forms.NumericUpDown();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Stud1 = new System.Windows.Forms.NumericUpDown();
+            this.Mod1 = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -60,45 +64,47 @@
             ((System.ComponentModel.ISupportInitialize)(this.Wa1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.El1)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Stud1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mod1)).BeginInit();
             this.SuspendLayout();
             // 
             // chart1
             // 
-            chartArea1.AxisX.ScaleView.SizeType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds;
-            chartArea1.AxisX2.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
-            chartArea1.AxisX2.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            chartArea2.AxisX.ScaleView.SizeType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds;
+            chartArea2.AxisX2.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
+            chartArea2.AxisX2.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds;
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend1.Alignment = System.Drawing.StringAlignment.Center;
-            legend1.BorderWidth = 0;
-            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend1.ItemColumnSpacing = 10;
-            legend1.MaximumAutoSize = 20F;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(3, 155);
+            legend2.Alignment = System.Drawing.StringAlignment.Center;
+            legend2.BorderWidth = 0;
+            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend2.ItemColumnSpacing = 10;
+            legend2.MaximumAutoSize = 20F;
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
+            this.chart1.Location = new System.Drawing.Point(3, 145);
             this.chart1.Name = "chart1";
-            series1.BorderWidth = 2;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
-            series1.Color = System.Drawing.Color.Green;
-            series1.Legend = "Legend1";
-            series1.Name = "Каналов занято";
-            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
-            series2.BorderWidth = 2;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
-            series2.Color = System.Drawing.Color.Red;
-            series2.Legend = "Legend1";
-            series2.Name = "Длина очереди";
-            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series2.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(825, 317);
+            series3.BorderWidth = 2;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
+            series3.Color = System.Drawing.Color.Green;
+            series3.Legend = "Legend1";
+            series3.Name = "Каналов занято";
+            series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
+            series4.BorderWidth = 2;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
+            series4.Color = System.Drawing.Color.Red;
+            series4.Legend = "Legend1";
+            series4.Name = "Длина очереди";
+            series4.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series4.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            series4.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
+            this.chart1.Series.Add(series3);
+            this.chart1.Series.Add(series4);
+            this.chart1.Size = new System.Drawing.Size(825, 327);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
@@ -128,10 +134,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.Stud1);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.Avgqueue1);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.T1);
             this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.Mod1);
             this.panel1.Controls.Add(this.C1);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.Wb1);
@@ -143,7 +153,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(825, 146);
+            this.panel1.Size = new System.Drawing.Size(825, 136);
             this.panel1.TabIndex = 1;
             // 
             // Avgqueue1
@@ -154,13 +164,13 @@
             this.Avgqueue1.Size = new System.Drawing.Size(127, 13);
             this.Avgqueue1.TabIndex = 12;
             this.Avgqueue1.Text = "Средняя длина очереди";
+            this.Avgqueue1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // button1
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button1.Location = new System.Drawing.Point(0, 107);
+            this.button1.Location = new System.Drawing.Point(569, 101);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(825, 39);
+            this.button1.Size = new System.Drawing.Size(175, 28);
             this.button1.TabIndex = 11;
             this.button1.Text = "Начать";
             this.button1.UseVisualStyleBackColor = true;
@@ -344,6 +354,69 @@
             this.textBox1.Size = new System.Drawing.Size(825, 469);
             this.textBox1.TabIndex = 0;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(112, 109);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(89, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Погрешность, %";
+            // 
+            // Stud1
+            // 
+            this.Stud1.DecimalPlaces = 4;
+            this.Stud1.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.Stud1.Location = new System.Drawing.Point(207, 107);
+            this.Stud1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            262144});
+            this.Stud1.Name = "Stud1";
+            this.Stud1.Size = new System.Drawing.Size(66, 20);
+            this.Stud1.TabIndex = 14;
+            this.Stud1.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // Mod1
+            // 
+            this.Mod1.Location = new System.Drawing.Point(497, 107);
+            this.Mod1.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.Mod1.Minimum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.Mod1.Name = "Mod1";
+            this.Mod1.Size = new System.Drawing.Size(66, 20);
+            this.Mod1.TabIndex = 8;
+            this.Mod1.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(292, 109);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(199, 13);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Количество запусков моделирования";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -367,6 +440,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.El1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Stud1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mod1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -391,6 +466,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label Avgqueue1;
+        private System.Windows.Forms.NumericUpDown Stud1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown Mod1;
     }
 }
 
