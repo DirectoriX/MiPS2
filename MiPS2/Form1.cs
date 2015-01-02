@@ -28,7 +28,7 @@ namespace MiPS2
             List<double> chfree = new List<double>(chs);
             double next = 0, now = 0;
 
-            int err = 0;
+            double avgqueue = 0;
 
             chart1.Series[0].Points.Clear();
             chart1.Series[1].Points.Clear();
@@ -48,9 +48,9 @@ namespace MiPS2
             chart1.Series[1].Points.AddXY(0, 0);
 
 
-            while (now < (double)T1.Value)
+            while ((now=Math.Min(next, chfree[0])) < (double)T1.Value)
             {
-                now = Math.Min(next, chfree[0]);
+               // now = Math.Min(next, chfree[0]);
 
                 if (now == next) // New person
                 {
@@ -79,7 +79,16 @@ namespace MiPS2
 
             chart1.Series[0].Points.AddXY((double)T1.Value, working);
             chart1.Series[1].Points.AddXY((double)T1.Value, queue);
-                    }
+
+            int tms=chart1.Series[1].Points.Count;
+
+            for (int i = 0; i < tms-1; i++)
+            {
+                avgqueue += chart1.Series[1].Points[i].YValues[0] * (chart1.Series[1].Points[i + 1].XValue - chart1.Series[1].Points[i].XValue);
+            }
+            avgqueue /= (double)T1.Value;
+            Avgqueue1.Text = "Средняя длина очереди: " + avgqueue.ToString();
+        }
 
     }
 }

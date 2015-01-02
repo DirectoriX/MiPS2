@@ -49,6 +49,7 @@
             this.El1 = new System.Windows.Forms.NumericUpDown();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Avgqueue1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -127,6 +128,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.Avgqueue1);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.T1);
             this.panel1.Controls.Add(this.label5);
@@ -333,6 +335,15 @@
             this.textBox1.Size = new System.Drawing.Size(773, 397);
             this.textBox1.TabIndex = 0;
             // 
+            // Avgqueue1
+            // 
+            this.Avgqueue1.AutoSize = true;
+            this.Avgqueue1.Location = new System.Drawing.Point(590, 5);
+            this.Avgqueue1.Name = "Avgqueue1";
+            this.Avgqueue1.Size = new System.Drawing.Size(127, 13);
+            this.Avgqueue1.TabIndex = 12;
+            this.Avgqueue1.Text = "Средняя длина очереди";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -379,6 +390,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label Avgqueue1;
     }
 }
 
