@@ -36,6 +36,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Avgqueue1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.T1 = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,7 +50,6 @@
             this.El1 = new System.Windows.Forms.NumericUpDown();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.Avgqueue1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -122,7 +122,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(831, 475);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Одна";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // panel1
@@ -145,6 +145,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(825, 146);
             this.panel1.TabIndex = 1;
+            // 
+            // Avgqueue1
+            // 
+            this.Avgqueue1.AutoSize = true;
+            this.Avgqueue1.Location = new System.Drawing.Point(590, 5);
+            this.Avgqueue1.Name = "Avgqueue1";
+            this.Avgqueue1.Size = new System.Drawing.Size(127, 13);
+            this.Avgqueue1.TabIndex = 12;
+            this.Avgqueue1.Text = "Средняя длина очереди";
             // 
             // button1
             // 
@@ -321,9 +330,9 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(779, 403);
+            this.tabPage2.Size = new System.Drawing.Size(831, 475);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Много";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // textBox1
@@ -332,17 +341,8 @@
             this.textBox1.Location = new System.Drawing.Point(3, 3);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(773, 397);
+            this.textBox1.Size = new System.Drawing.Size(825, 469);
             this.textBox1.TabIndex = 0;
-            // 
-            // Avgqueue1
-            // 
-            this.Avgqueue1.AutoSize = true;
-            this.Avgqueue1.Location = new System.Drawing.Point(590, 5);
-            this.Avgqueue1.Name = "Avgqueue1";
-            this.Avgqueue1.Size = new System.Drawing.Size(127, 13);
-            this.Avgqueue1.TabIndex = 12;
-            this.Avgqueue1.Text = "Средняя длина очереди";
             // 
             // Form1
             // 

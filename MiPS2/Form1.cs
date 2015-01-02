@@ -50,8 +50,6 @@ namespace MiPS2
 
             while ((now=Math.Min(next, chfree[0])) < (double)T1.Value)
             {
-               // now = Math.Min(next, chfree[0]);
-
                 if (now == next) // New person
                 {
                     queue++;
