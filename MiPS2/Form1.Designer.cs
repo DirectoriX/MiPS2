@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea21 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend21 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series41 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series42 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea23 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend23 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series45 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series46 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea24 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend24 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series47 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series48 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea22 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend22 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series43 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series44 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -64,6 +64,24 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.El1 = new System.Windows.Forms.NumericUpDown();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.Stud4 = new System.Windows.Forms.NumericUpDown();
+            this.label26 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.T4 = new System.Windows.Forms.NumericUpDown();
+            this.label27 = new System.Windows.Forms.Label();
+            this.Mod4 = new System.Windows.Forms.NumericUpDown();
+            this.C4 = new System.Windows.Forms.NumericUpDown();
+            this.label28 = new System.Windows.Forms.Label();
+            this.Wb4 = new System.Windows.Forms.NumericUpDown();
+            this.Wa4 = new System.Windows.Forms.NumericUpDown();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.El4 = new System.Windows.Forms.NumericUpDown();
+            this.chart4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -104,24 +122,6 @@
             this.label23 = new System.Windows.Forms.Label();
             this.El3 = new System.Windows.Forms.NumericUpDown();
             this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label25 = new System.Windows.Forms.Label();
-            this.Stud4 = new System.Windows.Forms.NumericUpDown();
-            this.label26 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.T4 = new System.Windows.Forms.NumericUpDown();
-            this.label27 = new System.Windows.Forms.Label();
-            this.Mod4 = new System.Windows.Forms.NumericUpDown();
-            this.C4 = new System.Windows.Forms.NumericUpDown();
-            this.label28 = new System.Windows.Forms.Label();
-            this.Wb4 = new System.Windows.Forms.NumericUpDown();
-            this.Wa4 = new System.Windows.Forms.NumericUpDown();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.El4 = new System.Windows.Forms.NumericUpDown();
-            this.chart4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -133,6 +133,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.Wb1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Wa1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.El1)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Stud4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.T4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mod4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wb4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wa4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.El4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart4)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -155,54 +165,44 @@
             ((System.ComponentModel.ISupportInitialize)(this.Wa3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.El3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
-            this.tabPage4.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Stud4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.T4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Mod4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.C4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Wb4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Wa4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.El4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart4)).BeginInit();
             this.SuspendLayout();
             // 
             // chart1
             // 
-            chartArea21.AxisX.ScaleView.SizeType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds;
-            chartArea21.AxisX2.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
-            chartArea21.AxisX2.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds;
-            chartArea21.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea21);
+            chartArea5.AxisX.ScaleView.SizeType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds;
+            chartArea5.AxisX2.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
+            chartArea5.AxisX2.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds;
+            chartArea5.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea5);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend21.Alignment = System.Drawing.StringAlignment.Center;
-            legend21.BorderWidth = 0;
-            legend21.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend21.ItemColumnSpacing = 10;
-            legend21.MaximumAutoSize = 20F;
-            legend21.Name = "Legend1";
-            this.chart1.Legends.Add(legend21);
+            legend5.Alignment = System.Drawing.StringAlignment.Center;
+            legend5.BorderWidth = 0;
+            legend5.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend5.ItemColumnSpacing = 10;
+            legend5.MaximumAutoSize = 20F;
+            legend5.Name = "Legend1";
+            this.chart1.Legends.Add(legend5);
             this.chart1.Location = new System.Drawing.Point(3, 145);
             this.chart1.Name = "chart1";
-            series41.BorderWidth = 2;
-            series41.ChartArea = "ChartArea1";
-            series41.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
-            series41.Color = System.Drawing.Color.Green;
-            series41.Legend = "Legend1";
-            series41.Name = "Каналов занято";
-            series41.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series41.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
-            series42.BorderWidth = 2;
-            series42.ChartArea = "ChartArea1";
-            series42.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
-            series42.Color = System.Drawing.Color.Red;
-            series42.Legend = "Legend1";
-            series42.Name = "Длина очереди";
-            series42.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series42.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            series42.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
-            this.chart1.Series.Add(series41);
-            this.chart1.Series.Add(series42);
+            series9.BorderWidth = 2;
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
+            series9.Color = System.Drawing.Color.Green;
+            series9.Legend = "Legend1";
+            series9.Name = "Каналов занято";
+            series9.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series9.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
+            series10.BorderWidth = 2;
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
+            series10.Color = System.Drawing.Color.Red;
+            series10.Legend = "Legend1";
+            series10.Name = "Длина очереди";
+            series10.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series10.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            series10.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
+            this.chart1.Series.Add(series9);
+            this.chart1.Series.Add(series10);
             this.chart1.Size = new System.Drawing.Size(825, 327);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -498,6 +498,300 @@
             0,
             0});
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.panel4);
+            this.tabPage4.Controls.Add(this.chart4);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(831, 475);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "C";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.Control;
+            this.panel4.Controls.Add(this.label25);
+            this.panel4.Controls.Add(this.Stud4);
+            this.panel4.Controls.Add(this.label26);
+            this.panel4.Controls.Add(this.button4);
+            this.panel4.Controls.Add(this.T4);
+            this.panel4.Controls.Add(this.label27);
+            this.panel4.Controls.Add(this.Mod4);
+            this.panel4.Controls.Add(this.C4);
+            this.panel4.Controls.Add(this.label28);
+            this.panel4.Controls.Add(this.Wb4);
+            this.panel4.Controls.Add(this.Wa4);
+            this.panel4.Controls.Add(this.label29);
+            this.panel4.Controls.Add(this.label30);
+            this.panel4.Controls.Add(this.label31);
+            this.panel4.Controls.Add(this.El4);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(831, 136);
+            this.panel4.TabIndex = 5;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(292, 109);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(199, 13);
+            this.label25.TabIndex = 15;
+            this.label25.Text = "Количество запусков моделирования";
+            // 
+            // Stud4
+            // 
+            this.Stud4.DecimalPlaces = 4;
+            this.Stud4.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.Stud4.Location = new System.Drawing.Point(207, 107);
+            this.Stud4.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            262144});
+            this.Stud4.Name = "Stud4";
+            this.Stud4.Size = new System.Drawing.Size(66, 20);
+            this.Stud4.TabIndex = 14;
+            this.Stud4.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(112, 109);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(89, 13);
+            this.label26.TabIndex = 13;
+            this.label26.Text = "Погрешность, %";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(569, 101);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(175, 28);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "Начать";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // T4
+            // 
+            this.T4.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.T4.Location = new System.Drawing.Point(496, 81);
+            this.T4.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.T4.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.T4.Name = "T4";
+            this.T4.Size = new System.Drawing.Size(67, 20);
+            this.T4.TabIndex = 10;
+            this.T4.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(289, 83);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(202, 13);
+            this.label27.TabIndex = 9;
+            this.label27.Text = "Максимальное время моделирования";
+            // 
+            // Mod4
+            // 
+            this.Mod4.Location = new System.Drawing.Point(497, 107);
+            this.Mod4.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.Mod4.Minimum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.Mod4.Name = "Mod4";
+            this.Mod4.Size = new System.Drawing.Size(66, 20);
+            this.Mod4.TabIndex = 8;
+            this.Mod4.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // C4
+            // 
+            this.C4.Location = new System.Drawing.Point(207, 81);
+            this.C4.Minimum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.C4.Name = "C4";
+            this.C4.Size = new System.Drawing.Size(66, 20);
+            this.C4.TabIndex = 8;
+            this.C4.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(14, 83);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(187, 13);
+            this.label28.TabIndex = 7;
+            this.label28.Text = "Количество каналов обслуживания";
+            // 
+            // Wb4
+            // 
+            this.Wb4.DecimalPlaces = 6;
+            this.Wb4.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            131072});
+            this.Wb4.Location = new System.Drawing.Point(207, 55);
+            this.Wb4.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            393216});
+            this.Wb4.Name = "Wb4";
+            this.Wb4.Size = new System.Drawing.Size(66, 20);
+            this.Wb4.TabIndex = 6;
+            this.Wb4.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            // 
+            // Wa4
+            // 
+            this.Wa4.DecimalPlaces = 6;
+            this.Wa4.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            131072});
+            this.Wa4.Location = new System.Drawing.Point(207, 29);
+            this.Wa4.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            393216});
+            this.Wa4.Name = "Wa4";
+            this.Wa4.Size = new System.Drawing.Size(66, 20);
+            this.Wa4.TabIndex = 5;
+            this.Wa4.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(52, 57);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(149, 13);
+            this.label29.TabIndex = 4;
+            this.label29.Text = "Распределение Вейбулла, β";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(5, 5);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(196, 13);
+            this.label30.TabIndex = 1;
+            this.label30.Text = "Экспоненциальное распределение, λ";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(51, 31);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(150, 13);
+            this.label31.TabIndex = 2;
+            this.label31.Text = "Распределение Вейбулла, α";
+            // 
+            // El4
+            // 
+            this.El4.DecimalPlaces = 6;
+            this.El4.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            131072});
+            this.El4.Location = new System.Drawing.Point(207, 3);
+            this.El4.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            393216});
+            this.El4.Name = "El4";
+            this.El4.Size = new System.Drawing.Size(66, 20);
+            this.El4.TabIndex = 0;
+            this.El4.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            // 
+            // chart4
+            // 
+            chartArea6.Name = "ChartArea1";
+            this.chart4.ChartAreas.Add(chartArea6);
+            legend6.Alignment = System.Drawing.StringAlignment.Center;
+            legend6.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend6.Name = "Legend1";
+            this.chart4.Legends.Add(legend6);
+            this.chart4.Location = new System.Drawing.Point(3, 142);
+            this.chart4.Name = "chart4";
+            series11.ChartArea = "ChartArea1";
+            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Range;
+            series11.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            series11.IsVisibleInLegend = false;
+            series11.Legend = "Legend1";
+            series11.Name = "ddl";
+            series11.YValuesPerPoint = 2;
+            series12.ChartArea = "ChartArea1";
+            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series12.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            series12.Legend = "Legend1";
+            series12.Name = "Средняя длина очереди";
+            this.chart4.Series.Add(series11);
+            this.chart4.Series.Add(series12);
+            this.chart4.Size = new System.Drawing.Size(825, 333);
+            this.chart4.TabIndex = 4;
+            this.chart4.Text = "chart4";
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.chart2);
@@ -512,28 +806,28 @@
             // 
             // chart2
             // 
-            chartArea23.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea23);
-            legend23.Alignment = System.Drawing.StringAlignment.Center;
-            legend23.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend23.Name = "Legend1";
-            this.chart2.Legends.Add(legend23);
+            chartArea7.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea7);
+            legend7.Alignment = System.Drawing.StringAlignment.Center;
+            legend7.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend7.Name = "Legend1";
+            this.chart2.Legends.Add(legend7);
             this.chart2.Location = new System.Drawing.Point(3, 145);
             this.chart2.Name = "chart2";
-            series45.ChartArea = "ChartArea1";
-            series45.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Range;
-            series45.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            series45.IsVisibleInLegend = false;
-            series45.Legend = "Legend1";
-            series45.Name = "ddl";
-            series45.YValuesPerPoint = 2;
-            series46.ChartArea = "ChartArea1";
-            series46.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series46.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            series46.Legend = "Legend1";
-            series46.Name = "Средняя длина очереди";
-            this.chart2.Series.Add(series45);
-            this.chart2.Series.Add(series46);
+            series13.ChartArea = "ChartArea1";
+            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Range;
+            series13.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            series13.IsVisibleInLegend = false;
+            series13.Legend = "Legend1";
+            series13.Name = "ddl";
+            series13.YValuesPerPoint = 2;
+            series14.ChartArea = "ChartArea1";
+            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series14.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            series14.Legend = "Legend1";
+            series14.Name = "Средняя длина очереди";
+            this.chart2.Series.Add(series13);
+            this.chart2.Series.Add(series14);
             this.chart2.Size = new System.Drawing.Size(825, 327);
             this.chart2.TabIndex = 3;
             this.chart2.Text = "chart2";
@@ -1127,325 +1421,31 @@
             // 
             // chart3
             // 
-            chartArea24.Name = "ChartArea1";
-            this.chart3.ChartAreas.Add(chartArea24);
-            legend24.Alignment = System.Drawing.StringAlignment.Center;
-            legend24.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend24.Name = "Legend1";
-            this.chart3.Legends.Add(legend24);
+            chartArea8.Name = "ChartArea1";
+            this.chart3.ChartAreas.Add(chartArea8);
+            legend8.Alignment = System.Drawing.StringAlignment.Center;
+            legend8.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend8.Name = "Legend1";
+            this.chart3.Legends.Add(legend8);
             this.chart3.Location = new System.Drawing.Point(3, 142);
             this.chart3.Name = "chart3";
-            series47.ChartArea = "ChartArea1";
-            series47.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Range;
-            series47.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            series47.IsVisibleInLegend = false;
-            series47.Legend = "Legend1";
-            series47.Name = "ddl";
-            series47.YValuesPerPoint = 2;
-            series48.ChartArea = "ChartArea1";
-            series48.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series48.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            series48.Legend = "Legend1";
-            series48.Name = "Средняя длина очереди";
-            this.chart3.Series.Add(series47);
-            this.chart3.Series.Add(series48);
+            series15.ChartArea = "ChartArea1";
+            series15.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Range;
+            series15.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            series15.IsVisibleInLegend = false;
+            series15.Legend = "Legend1";
+            series15.Name = "ddl";
+            series15.YValuesPerPoint = 2;
+            series16.ChartArea = "ChartArea1";
+            series16.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series16.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            series16.Legend = "Legend1";
+            series16.Name = "Средняя длина очереди";
+            this.chart3.Series.Add(series15);
+            this.chart3.Series.Add(series16);
             this.chart3.Size = new System.Drawing.Size(825, 333);
             this.chart3.TabIndex = 4;
             this.chart3.Text = "chart3";
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.panel4);
-            this.tabPage4.Controls.Add(this.chart4);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(831, 475);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "C";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.Control;
-            this.panel4.Controls.Add(this.label25);
-            this.panel4.Controls.Add(this.Stud4);
-            this.panel4.Controls.Add(this.label26);
-            this.panel4.Controls.Add(this.button4);
-            this.panel4.Controls.Add(this.T4);
-            this.panel4.Controls.Add(this.label27);
-            this.panel4.Controls.Add(this.Mod4);
-            this.panel4.Controls.Add(this.C4);
-            this.panel4.Controls.Add(this.label28);
-            this.panel4.Controls.Add(this.Wb4);
-            this.panel4.Controls.Add(this.Wa4);
-            this.panel4.Controls.Add(this.label29);
-            this.panel4.Controls.Add(this.label30);
-            this.panel4.Controls.Add(this.label31);
-            this.panel4.Controls.Add(this.El4);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(831, 136);
-            this.panel4.TabIndex = 5;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(292, 109);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(199, 13);
-            this.label25.TabIndex = 15;
-            this.label25.Text = "Количество запусков моделирования";
-            // 
-            // Stud4
-            // 
-            this.Stud4.DecimalPlaces = 4;
-            this.Stud4.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.Stud4.Location = new System.Drawing.Point(207, 107);
-            this.Stud4.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            262144});
-            this.Stud4.Name = "Stud4";
-            this.Stud4.Size = new System.Drawing.Size(66, 20);
-            this.Stud4.TabIndex = 14;
-            this.Stud4.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(112, 109);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(89, 13);
-            this.label26.TabIndex = 13;
-            this.label26.Text = "Погрешность, %";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(569, 101);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(175, 28);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "Начать";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // T4
-            // 
-            this.T4.Increment = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.T4.Location = new System.Drawing.Point(496, 81);
-            this.T4.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.T4.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.T4.Name = "T4";
-            this.T4.Size = new System.Drawing.Size(67, 20);
-            this.T4.TabIndex = 10;
-            this.T4.Value = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(289, 83);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(202, 13);
-            this.label27.TabIndex = 9;
-            this.label27.Text = "Максимальное время моделирования";
-            // 
-            // Mod4
-            // 
-            this.Mod4.Location = new System.Drawing.Point(497, 107);
-            this.Mod4.Maximum = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            this.Mod4.Minimum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            this.Mod4.Name = "Mod4";
-            this.Mod4.Size = new System.Drawing.Size(66, 20);
-            this.Mod4.TabIndex = 8;
-            this.Mod4.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            // 
-            // C4
-            // 
-            this.C4.Location = new System.Drawing.Point(207, 81);
-            this.C4.Minimum = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.C4.Name = "C4";
-            this.C4.Size = new System.Drawing.Size(66, 20);
-            this.C4.TabIndex = 8;
-            this.C4.Value = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(14, 83);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(187, 13);
-            this.label28.TabIndex = 7;
-            this.label28.Text = "Количество каналов обслуживания";
-            // 
-            // Wb4
-            // 
-            this.Wb4.DecimalPlaces = 6;
-            this.Wb4.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            131072});
-            this.Wb4.Location = new System.Drawing.Point(207, 55);
-            this.Wb4.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            393216});
-            this.Wb4.Name = "Wb4";
-            this.Wb4.Size = new System.Drawing.Size(66, 20);
-            this.Wb4.TabIndex = 6;
-            this.Wb4.Value = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            // 
-            // Wa4
-            // 
-            this.Wa4.DecimalPlaces = 6;
-            this.Wa4.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            131072});
-            this.Wa4.Location = new System.Drawing.Point(207, 29);
-            this.Wa4.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            393216});
-            this.Wa4.Name = "Wa4";
-            this.Wa4.Size = new System.Drawing.Size(66, 20);
-            this.Wa4.TabIndex = 5;
-            this.Wa4.Value = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(52, 57);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(149, 13);
-            this.label29.TabIndex = 4;
-            this.label29.Text = "Распределение Вейбулла, β";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(5, 5);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(196, 13);
-            this.label30.TabIndex = 1;
-            this.label30.Text = "Экспоненциальное распределение, λ";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(51, 31);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(150, 13);
-            this.label31.TabIndex = 2;
-            this.label31.Text = "Распределение Вейбулла, α";
-            // 
-            // El4
-            // 
-            this.El4.DecimalPlaces = 6;
-            this.El4.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            131072});
-            this.El4.Location = new System.Drawing.Point(207, 3);
-            this.El4.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            393216});
-            this.El4.Name = "El4";
-            this.El4.Size = new System.Drawing.Size(66, 20);
-            this.El4.TabIndex = 0;
-            this.El4.Value = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            // 
-            // chart4
-            // 
-            chartArea22.Name = "ChartArea1";
-            this.chart4.ChartAreas.Add(chartArea22);
-            legend22.Alignment = System.Drawing.StringAlignment.Center;
-            legend22.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend22.Name = "Legend1";
-            this.chart4.Legends.Add(legend22);
-            this.chart4.Location = new System.Drawing.Point(3, 142);
-            this.chart4.Name = "chart4";
-            series43.ChartArea = "ChartArea1";
-            series43.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Range;
-            series43.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            series43.IsVisibleInLegend = false;
-            series43.Legend = "Legend1";
-            series43.Name = "ddl";
-            series43.YValuesPerPoint = 2;
-            series44.ChartArea = "ChartArea1";
-            series44.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series44.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            series44.Legend = "Legend1";
-            series44.Name = "Средняя длина очереди";
-            this.chart4.Series.Add(series43);
-            this.chart4.Series.Add(series44);
-            this.chart4.Size = new System.Drawing.Size(825, 333);
-            this.chart4.TabIndex = 4;
-            this.chart4.Text = "chart4";
             // 
             // Form1
             // 
@@ -1470,6 +1470,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.Wb1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Wa1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.El1)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Stud4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.T4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mod4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wb4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Wa4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.El4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart4)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -1494,17 +1505,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Wa3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.El3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
-            this.tabPage4.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Stud4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.T4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Mod4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.C4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Wb4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Wa4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.El4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart4)).EndInit();
             this.ResumeLayout(false);
 
         }

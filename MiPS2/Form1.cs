@@ -18,7 +18,7 @@ namespace MiPS2
         private Random RNG = new Random();
 
         int queue, chs, working;
-        List<double> chfree;
+        List<double> chfree, PointX, PointYq, PointYc;
         double next, now;
         double avgavgqueue;
 
@@ -47,8 +47,9 @@ namespace MiPS2
                 chfree = new List<double>(chs);
                 next = 0; now = 0;
 
-                chart1.Series[0].Points.Clear();
-                chart1.Series[1].Points.Clear();
+                PointX = new List<double>();
+                PointYq = new List<double>();
+                PointYc = new List<double>();
 
                 next = ED.GetRandomValue(RNG);
                 now = next;
@@ -58,9 +59,10 @@ namespace MiPS2
                     chfree.Add(99999999999999);
                 }
 
-                chart1.Series[0].Points.AddXY(0, 0);
-                chart1.Series[1].Points.AddXY(0, 0);
-
+                PointX.Add(0);
+                if (n == kkk - 1)
+                    PointYc.Add(0);
+                PointYq.Add(0);
 
                 while ((now = Math.Min(next, chfree[0])) < (double)T1.Value)
                 {
@@ -85,21 +87,34 @@ namespace MiPS2
                         chfree.Sort();
                     }
 
-                    chart1.Series[0].Points.AddXY(now, working);
-                    chart1.Series[1].Points.AddXY(now, queue);
+                    PointX.Add(now);
+                    if (n == kkk - 1)
+                        PointYc.Add(working);
+                    PointYq.Add(queue);
                 }
 
-                chart1.Series[0].Points.AddXY((double)T1.Value, working);
-                chart1.Series[1].Points.AddXY((double)T1.Value, queue);
+                PointX.Add((double)T1.Value);
+                if (n == kkk - 1)
+                    PointYc.Add(working);
+                PointYq.Add(queue);
 
-                int tms = chart1.Series[1].Points.Count;
+                int tms = PointX.Count;
 
                 for (int i = 0; i < tms - 1; i++)
                 {
-                    avgqueue[n] += chart1.Series[1].Points[i].YValues[0] * (chart1.Series[1].Points[i + 1].XValue - chart1.Series[1].Points[i].XValue);
+                    avgqueue[n] += PointYq[i] * (PointX[i + 1] - PointX[i]);
                 }
                 avgqueue[n] /= (double)T1.Value;
                 avgavgqueue += avgqueue[n] / kkk;
+            }
+
+            chart1.Series[0].Points.Clear();
+            chart1.Series[1].Points.Clear();
+
+            for (int i = 0; i < PointX.Count; i++)
+            {
+                chart1.Series[0].Points.AddXY(PointX[i], PointYc[i]);
+                chart1.Series[1].Points.AddXY(PointX[i], PointYq[i]);
             }
 
             double sum = 0;
@@ -143,7 +158,6 @@ namespace MiPS2
                     chfree = new List<double>(chs);
                     next = 0; now = 0;
 
-                    chart1.Series[0].Points.Clear();
                     chart1.Series[1].Points.Clear();
 
                     next = ED.GetRandomValue(RNG);
@@ -177,7 +191,6 @@ namespace MiPS2
                             chfree.Sort();
                         }
 
-                        chart1.Series[0].Points.AddXY(now, working);
                         chart1.Series[1].Points.AddXY(now, queue);
                     }
 
@@ -232,11 +245,10 @@ namespace MiPS2
 
                 for (int n = 0; n < Models; n++)
                 {
-                    queue = 0;  working = 0;
+                    queue = 0; working = 0;
                     chfree = new List<double>(chs);
                     next = 0; now = 0;
 
-                    chart1.Series[0].Points.Clear();
                     chart1.Series[1].Points.Clear();
 
                     next = ED.GetRandomValue(RNG);
@@ -270,7 +282,6 @@ namespace MiPS2
                             chfree.Sort();
                         }
 
-                        chart1.Series[0].Points.AddXY(now, working);
                         chart1.Series[1].Points.AddXY(now, queue);
                     }
 
@@ -310,8 +321,8 @@ namespace MiPS2
                 int Models = (int)Mod4.Value;
                 double Wscale = 1 / (double)Wa4.Value;
                 double Wshape = (double)Wb4.Value;
-                double Emu = 1 / (double)El4.Value; 
-                chs = (int)C4.Value+2-k;
+                double Emu = 1 / (double)El4.Value;
+                chs = (int)C4.Value + 2 - k;
 
                 double[] avgqueue = new double[Models];
                 for (int i = 0; i < Models; i++)
@@ -325,11 +336,10 @@ namespace MiPS2
 
                 for (int n = 0; n < Models; n++)
                 {
-                    queue = 0;  working = 0;
+                    queue = 0; working = 0;
                     chfree = new List<double>(chs);
                     next = 0; now = 0;
 
-                    chart1.Series[0].Points.Clear();
                     chart1.Series[1].Points.Clear();
 
                     next = ED.GetRandomValue(RNG);
@@ -363,7 +373,6 @@ namespace MiPS2
                             chfree.Sort();
                         }
 
-                        chart1.Series[0].Points.AddXY(now, working);
                         chart1.Series[1].Points.AddXY(now, queue);
                     }
 
@@ -392,6 +401,6 @@ namespace MiPS2
 
             }
         }
-
+        
     }
 }
