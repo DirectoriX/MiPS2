@@ -17,6 +17,7 @@ namespace MiPS2
         private WeibullDistribution WD;
         private ExponentialDistribution ED;
         private Random RNG = new Random();
+        ColumnVector x = null;
 
         int queue, chs, working;
         List<double> chfree, PointX, PointYq, PointYc;
@@ -430,18 +431,18 @@ namespace MiPS2
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.Text = DateTime.Now.ToString();
+            this.Text = "Выполняется ПФЭ ";
 
             dataGridView1.Rows.Clear();
             for (int z = 0; z < 8; z++)
             {
-                int Models = 5000;
-                int maxtime = 500;
+                int Models = 10000;
+                int maxtime = 100;
 
-                double Wscale = 1.0 / (2 - 1 + 2 * (z / 4));
+                double Wscale = 1.0 / (3 - 0.1 + 0.2 * (z / 4));
                 double Wshape = 2.0;
-                double Emu = 1.0 / (2 - 1 + 2 * ((z / 2) % 2));
-                chs = (3 - 1 + 2 * (z % 2));
+                double Emu = 1.0 / (3 - 0.1 + 0.2 * ((z / 2) % 2));
+                chs = (4 - 1 + 2 * (z % 2));
 
                 double[] avgqueue = new double[Models];
                 for (int i = 0; i < Models; i++)
@@ -524,9 +525,9 @@ namespace MiPS2
                 double pogr = st.InverseLeftProbability(1 - 5 / 200.0) * Math.Sqrt(sum / (Models - 1)) / Math.Sqrt(Models);
 
                 dataGridView1.Rows.Add(z + 1, 1, 1 / Wscale, 1 / Emu, chs, 1 / (Emu * Wscale), chs / Wscale, chs / Emu, chs / (Emu * Wscale), avgavgqueue, pogr);
-            }
 
-            this.Text += " - " + DateTime.Now.ToString();
+                this.Text += "|";
+            }
 
             SquareMatrix A = new SquareMatrix(8);
             ColumnVector b = new ColumnVector(8);
@@ -535,17 +536,314 @@ namespace MiPS2
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    A[i, j] = Convert.ToDouble(dataGridView1.Rows[i].Cells[j+1].Value);
+                    A[i, j] = Convert.ToDouble(dataGridView1.Rows[i].Cells[j + 1].Value);
                 }
-                b[i]=(double)dataGridView1.Rows[i].Cells[9].Value;
+                b[i] = (double)dataGridView1.Rows[i].Cells[9].Value;
             }
 
-            ColumnVector x = A.Inverse() * b;
+            x = A.Inverse() * b;
 
             ResLabel.Text = "Уравнение: Y = (" + x[0].ToString() + ") + (" + x[1].ToString() + ")*X1 + (" + x[2].ToString() + ")*X2 + (" + x[3].ToString() + ")*X3 +\n(" + x[4].ToString() + ")*X1X2 + (" + x[5].ToString() + ")*X2X3 + (" + x[6].ToString() + ")*X1X3 + (" + x[7].ToString() + ")*X1X2X3";
 
 
-            this.Text += " - "+DateTime.Now.ToString();
+            this.Text = "МиПС2";
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (x == null) return;
+
+            chart5.Series[0].Points.Clear();
+            chart5.Series[1].Points.Clear();
+            int Models = 500;
+            double Emu = 1 / 2.9;
+            double Wshape = (double)2;
+            chs = 3;
+
+            for (int k = 0; k < 21; k++)
+            {
+                double Wscale = 1 / (2.9 + 2.0 * (10 - k) / 100.0);
+
+                double[] avgqueue = new double[Models];
+                for (int i = 0; i < Models; i++)
+                {
+                    avgqueue[i] = 0;
+                }
+                avgavgqueue = 0;
+
+                WD = new WeibullDistribution(Wscale, Wshape);
+                ED = new ExponentialDistribution(Emu);
+
+                for (int n = 0; n < Models; n++)
+                {
+                    queue = 0; working = 0;
+                    chfree = new List<double>(chs);
+                    next = 0; now = 0;
+
+                    PointX = new List<double>();
+                    PointYq = new List<double>();
+
+                    next = ED.GetRandomValue(RNG);
+                    now = next;
+
+                    for (int i = 0; i < chs; i++)
+                    {
+                        chfree.Add(99999999999999);
+                    }
+
+                    PointX.Add(0);
+                    PointYq.Add(0);
+
+                    while ((now = Math.Min(next, chfree[0])) < (double)T2.Value)
+                    {
+                        if (now == next) // New person
+                        {
+                            queue++;
+                            next += ED.GetRandomValue(RNG);
+                        }
+                        else // Free channel
+                        {
+                            working--;
+                            chfree[0] = 99999999999999;
+                        }
+
+                        chfree.Sort();
+
+                        if (working < chs && queue > 0)
+                        {
+                            queue--;
+                            chfree[working] = now + WD.GetRandomValue(RNG);
+                            working++;
+                            chfree.Sort();
+                        }
+
+                        PointX.Add(now);
+                        PointYq.Add(queue);
+                    }
+
+                    PointX.Add((double)T2.Value);
+                    PointYq.Add(queue);
+
+                    int tms = PointX.Count;
+
+                    for (int i = 0; i < tms - 1; i++)
+                    {
+                        avgqueue[n] += PointYq[i] * (PointX[i + 1] - PointX[i]);
+                    }
+                    avgqueue[n] /= (double)T2.Value;
+                    avgavgqueue += avgqueue[n] / Models;
+                }
+
+                double sum = 0;
+                for (int i = 0; i < Models; i++)
+                {
+                    sum += Math.Pow((avgavgqueue - avgqueue[i]), 2);
+                }
+
+                double aba = x[0] + x[1] * (1 / Wscale) + x[2] * (1 / Emu) + x[3] * chs + x[4] / (Wscale * Emu) + x[5] * (chs / Wscale) + x[6] * chs / Emu + x[7] * chs / (Emu * Wscale);
+
+                chart5.Series[0].Points.AddXY(1 / Wscale, avgavgqueue);
+                chart5.Series[1].Points.AddXY(1 / Wscale, aba);
+
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (x == null) return;
+
+            chart5.Series[0].Points.Clear();
+            chart5.Series[1].Points.Clear();
+            int Models = 500;
+            double Wscale = 1 / 2.9;
+            double Wshape = (double)2;
+            chs = 3;
+
+            for (int k = 0; k < 21; k++)
+            {
+                double Emu = 1 / (2.9 + 2.0 * (10 - k) / 100.0);
+
+                double[] avgqueue = new double[Models];
+                for (int i = 0; i < Models; i++)
+                {
+                    avgqueue[i] = 0;
+                }
+                avgavgqueue = 0;
+
+                WD = new WeibullDistribution(Wscale, Wshape);
+                ED = new ExponentialDistribution(Emu);
+
+                for (int n = 0; n < Models; n++)
+                {
+                    queue = 0; working = 0;
+                    chfree = new List<double>(chs);
+                    next = 0; now = 0;
+
+                    PointX = new List<double>();
+                    PointYq = new List<double>();
+
+                    next = ED.GetRandomValue(RNG);
+                    now = next;
+
+                    for (int i = 0; i < chs; i++)
+                    {
+                        chfree.Add(99999999999999);
+                    }
+
+                    PointX.Add(0);
+                    PointYq.Add(0);
+
+                    while ((now = Math.Min(next, chfree[0])) < (double)T2.Value)
+                    {
+                        if (now == next) // New person
+                        {
+                            queue++;
+                            next += ED.GetRandomValue(RNG);
+                        }
+                        else // Free channel
+                        {
+                            working--;
+                            chfree[0] = 99999999999999;
+                        }
+
+                        chfree.Sort();
+
+                        if (working < chs && queue > 0)
+                        {
+                            queue--;
+                            chfree[working] = now + WD.GetRandomValue(RNG);
+                            working++;
+                            chfree.Sort();
+                        }
+
+                        PointX.Add(now);
+                        PointYq.Add(queue);
+                    }
+
+                    PointX.Add((double)T2.Value);
+                    PointYq.Add(queue);
+
+                    int tms = PointX.Count;
+
+                    for (int i = 0; i < tms - 1; i++)
+                    {
+                        avgqueue[n] += PointYq[i] * (PointX[i + 1] - PointX[i]);
+                    }
+                    avgqueue[n] /= (double)T2.Value;
+                    avgavgqueue += avgqueue[n] / Models;
+                }
+
+                double sum = 0;
+                for (int i = 0; i < Models; i++)
+                {
+                    sum += Math.Pow((avgavgqueue - avgqueue[i]), 2);
+                }
+
+                double aba = x[0] + x[1] * (1 / Wscale) + x[2] * (1 / Emu) + x[3] * chs + x[4] / (Wscale * Emu) + x[5] * (chs / Wscale) + x[6] * chs / Emu + x[7] * chs / (Emu * Wscale);
+
+                chart5.Series[0].Points.AddXY(1 / Emu, avgavgqueue);
+                chart5.Series[1].Points.AddXY(1 / Emu, aba);
+
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (x == null) return;
+
+            chart5.Series[0].Points.Clear();
+            chart5.Series[1].Points.Clear();
+            int Models = 500;
+            double Wscale = 1 / 2.9;
+            double Emu = 1 / 2.9;
+            double Wshape = (double)2;
+
+            for (int k = 0; k < 3; k++)
+            {
+                int chs = 3 + 1 - k;
+
+                double[] avgqueue = new double[Models];
+                for (int i = 0; i < Models; i++)
+                {
+                    avgqueue[i] = 0;
+                }
+                avgavgqueue = 0;
+
+                WD = new WeibullDistribution(Wscale, Wshape);
+                ED = new ExponentialDistribution(Emu);
+
+                for (int n = 0; n < Models; n++)
+                {
+                    queue = 0; working = 0;
+                    chfree = new List<double>(chs);
+                    next = 0; now = 0;
+
+                    PointX = new List<double>();
+                    PointYq = new List<double>();
+
+                    next = ED.GetRandomValue(RNG);
+                    now = next;
+
+                    for (int i = 0; i < chs; i++)
+                    {
+                        chfree.Add(99999999999999);
+                    }
+
+                    PointX.Add(0);
+                    PointYq.Add(0);
+
+                    while ((now = Math.Min(next, chfree[0])) < (double)T2.Value)
+                    {
+                        if (now == next) // New person
+                        {
+                            queue++;
+                            next += ED.GetRandomValue(RNG);
+                        }
+                        else // Free channel
+                        {
+                            working--;
+                            chfree[0] = 99999999999999;
+                        }
+
+                        chfree.Sort();
+
+                        if (working < chs && queue > 0)
+                        {
+                            queue--;
+                            chfree[working] = now + WD.GetRandomValue(RNG);
+                            working++;
+                            chfree.Sort();
+                        }
+
+                        PointX.Add(now);
+                        PointYq.Add(queue);
+                    }
+
+                    PointX.Add((double)T2.Value);
+                    PointYq.Add(queue);
+
+                    int tms = PointX.Count;
+
+                    for (int i = 0; i < tms - 1; i++)
+                    {
+                        avgqueue[n] += PointYq[i] * (PointX[i + 1] - PointX[i]);
+                    }
+                    avgqueue[n] /= (double)T2.Value;
+                    avgavgqueue += avgqueue[n] / Models;
+                }
+
+                double sum = 0;
+                for (int i = 0; i < Models; i++)
+                {
+                    sum += Math.Pow((avgavgqueue - avgqueue[i]), 2);
+                }
+
+                double aba = x[0] + x[1] * (1 / Wscale) + x[2] * (1 / Emu) + x[3] * chs + x[4] / (Wscale * Emu) + x[5] * (chs / Wscale) + x[6] * chs / Emu + x[7] * chs / (Emu * Wscale);
+
+                chart5.Series[0].Points.AddXY(chs, avgavgqueue);
+                chart5.Series[1].Points.AddXY(chs, aba);
+
+            }
         }
 
     }
